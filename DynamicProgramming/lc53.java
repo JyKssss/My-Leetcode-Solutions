@@ -1,7 +1,7 @@
 package DynamicProgramming;
 
 /***
- * dp解法  每一轮找到以i为终点的最大子路 
+ * dp解法  每一轮找到以i为终点的最大子路
  */
 public class lc53 {
     public int maxSubArray(int[] nums) {
