@@ -1,4 +1,4 @@
-package tree;
+package Tree;
 
 public class lc106 {
     public TreeNode buildTree(int[] inorder, int[] postorder) {

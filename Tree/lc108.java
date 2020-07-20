@@ -1,4 +1,4 @@
-package tree;
+package Tree;
 
 public class lc108 {
     public TreeNode sortedArrayToBST(int[] nums) {

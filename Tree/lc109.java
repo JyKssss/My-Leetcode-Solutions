@@ -1,6 +1,4 @@
-package tree;
-
-import sun.reflect.generics.tree.Tree;
+package Tree;
 
 import java.util.ArrayList;
 import java.util.List;

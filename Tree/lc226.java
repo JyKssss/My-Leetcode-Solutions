@@ -1,4 +1,4 @@
-package tree;
+package Tree;
 
 /**
  * 翻转二叉树 自顶向下的翻转

@@ -1,4 +1,4 @@
-package tree;
+package Tree;
 
 /**
  * 递归解平衡二叉树
