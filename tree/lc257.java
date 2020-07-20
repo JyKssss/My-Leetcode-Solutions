@@ -4,6 +4,9 @@ import java.sql.PreparedStatement;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 用StringBuffer的话时间效率会提高很多
+ */
 public class lc257 {
     List<String>res=new ArrayList<>();
     public List<String> binaryTreePaths(TreeNode root) {

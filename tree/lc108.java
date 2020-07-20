@@ -9,7 +9,8 @@ public class lc108 {
 
     public TreeNode toBST(int[] nums,int start,int end){
         if (end-start<0)return null;
-        int index=(start+end)/2;
+        //可能会有数据溢出的问题(start+end)/2
+        int index=start+(end-start)/2;
         int val=nums[index];
         TreeNode root=new TreeNode(val);
         if (index>start){
