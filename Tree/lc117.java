@@ -1,4 +1,4 @@
-package Tree;
+package tree;
 
 public class lc117 {
     public Node connect(Node root) {

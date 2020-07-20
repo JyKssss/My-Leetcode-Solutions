@@ -1,4 +1,4 @@
-package Tree;
+package tree;
 
 public class lc543 {
     public int diameterOfBinaryTree(TreeNode root) {

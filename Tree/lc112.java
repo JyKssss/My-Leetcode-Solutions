@@ -1,4 +1,4 @@
-package Tree;
+package tree;
 
 public class lc112 {
     public boolean hasPathSum(TreeNode root, int sum) {

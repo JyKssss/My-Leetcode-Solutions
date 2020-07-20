@@ -1,6 +1,4 @@
-package tree;
-
-import java.util.ArrayList;
+package Tree;
 
 public class lc236 {
     /**
