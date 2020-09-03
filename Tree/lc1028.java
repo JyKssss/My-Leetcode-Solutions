@@ -2,7 +2,7 @@ package Tree;
 
 public class lc1028 {
     public TreeNode recoverFromPreorder(String S) {
-
+        return null;
     }
 
     private class TreeNode {
