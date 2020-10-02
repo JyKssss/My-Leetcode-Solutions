@@ -31,6 +31,11 @@ public class lcp19 {
         return leaves.length()-resNums[resNums.length-1]+min;
     }
 
+    /**
+     * 用 i j表示两个分界点 计算整体需要的次数
+     * @param leaves
+     * @return
+     */
     public int minimumOperations2(String leaves) {
         int n = leaves.length();
         char[] array = leaves.toCharArray();
