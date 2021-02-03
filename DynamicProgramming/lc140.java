@@ -14,10 +14,10 @@ public class lc140 {
     public List<String> wordBreak(String s, List<String> wordDict) {
         HashSet<String>wordSet=new HashSet<>();
         HashMap<Integer,List<List<String>>>indexWordMap=new HashMap<>();
-        List<List<String>>
+        return null;
     }
 
     public List<List<String>>backtrack(int index, String s, int length, HashSet<String>wordSet, HashMap<Integer,List<List<String>>>indexWordMap){
-
+        return null;
     }
 }
