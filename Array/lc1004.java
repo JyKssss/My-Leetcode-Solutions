@@ -1,21 +1,25 @@
 package Array;
 
 public class lc1004 {
+
+
+
     public int longestOnes(int[] A, int K) {
-        int zeroCounts=0,left=0,right=0,maxLen=0;
-        while (right<A.length){
-            int r=A[right];
+        int zeroCnt=0,len=A.length,res=0,left=0,right=0;
+        while (right<len){
+            int cur=A[right];
             right++;
-            if (r==0){
-                zeroCounts++;
+            if (cur==0){
+                zeroCnt++;
             }
-            while (zeroCounts>K){
-                int l=A[left];
+            while (zeroCnt>K){
+                if (A[left]==0){
+                    zeroCnt--;
+                }
                 left++;
-                if (l==0)zeroCounts--;
             }
-            maxLen=maxLen<(right-left)?(right-left):maxLen;
+            res=Math.max(res, right-left);
         }
-        return maxLen;
+        return res;
     }
 }
