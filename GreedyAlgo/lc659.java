@@ -3,6 +3,15 @@ package GreedyAlgo;
 import java.util.HashMap;
 
 public class lc659 {
+    /**
+     * numsCountMap 记录每个数字的剩余量
+     * endCountMap 记录以key为结尾的序列的数量
+     * 新加入一个数字 n 判断是否有以n-1为结尾的序列 如有则加入序列更新两个map
+     * 如无判断是否存在n+1 n+2是否剩余 是则创建一个n+2结尾的序列 否则false
+     *
+     * @param nums
+     * @return
+     */
     public boolean isPossible(int[] nums) {
         if (nums.length<=2)return false;
         HashMap<Integer,Integer>numsCountMap=new HashMap<>();
