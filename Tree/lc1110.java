@@ -71,6 +71,42 @@ public class lc1110 {
         return res;
     }
 
+    Set<Integer>to_deleteSet;
+    List<TreeNode>headNodeList;
+    public List<TreeNode> delNodes2(TreeNode root, int[] to_delete) {
+        this.to_deleteSet=new HashSet<>();
+        for (int i : to_delete) {
+            to_deleteSet.add(i);
+        }
+        this.headNodeList=new ArrayList<>();
+        root=deleteHelper(root);
+
+        if (root!=null){
+            headNodeList.add(root);
+        }
+
+        return headNodeList;
+    }
+
+    private TreeNode deleteHelper(TreeNode node){
+        if (node==null){
+            return node;
+        }
+        node.left=deleteHelper(node.left);
+        node.right=deleteHelper(node.right);
+
+        if (to_deleteSet.contains(node.val)){
+            if (node.left!=null){
+                headNodeList.add(node.left);
+            }
+            if (node.right!=null){
+                headNodeList.add(node.right);
+            }
+            node=null;
+        }
+        return node;
+    }
+
     private class TreeNode {
         int val;
         TreeNode left;
