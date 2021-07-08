@@ -21,6 +21,7 @@ public class lc297 {
         Deque<TreeNode>line=new LinkedList<>();
         line.addLast(root);
         while (!line.isEmpty()){
+
             int length=line.size();
             for (int i = 0; i < length; i++) {
                 TreeNode cur=line.pollFirst();
