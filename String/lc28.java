@@ -4,7 +4,7 @@ public class lc28 {
     /**
      * 用kmp实现字符串匹配
      * @param haystack
-     * @param needle
+     * @param needle 模式串
      * @return
      */
     public int strStr(String haystack, String needle) {

@@ -1,8 +1,6 @@
 package Tree;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class lc987 {
     List<location>res =new ArrayList<>();
@@ -72,10 +70,44 @@ public class lc987 {
             }
         }
     }
-    private class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode(int x) { val = x; }
+
+
+    TreeMap<Integer,List<int[]>>treeMap;
+    public List<List<Integer>> verticalTraversal2(TreeNode root) {
+        this.treeMap=new TreeMap<>();
+        List<List<Integer>> res=new ArrayList<>();
+        inOrderTraverse(root, 0,0);
+        while (treeMap.size()>0){
+            List<int[]>list=treeMap.pollFirstEntry().getValue();
+            Collections.sort(list, new Comparator<int[]>() {
+                @Override
+                public int compare(int[] o1, int[] o2) {
+                    if (o1[1]!=o2[1]){
+                        return o1[1]-o2[1];
+                    }
+                    else {
+                        return o1[0]-o2[0];
+                    }
+                }
+            });
+
+            List<Integer>listRank=new ArrayList<>();
+            for (int[] ints : list) {
+                listRank.add(ints[0]);
+            }
+            res.add(listRank);
+        }
+        return res;
+    }
+
+    private void inOrderTraverse(TreeNode node, int rank,int height){
+        if (node==null){
+            return;
+        }
+        List<int[]>list= treeMap.getOrDefault(rank, new ArrayList<>());
+        list.add(new int[]{node.val,height});
+        treeMap.put(rank, list);
+        inOrderTraverse(node.left, rank-1,height+1);
+        inOrderTraverse(node.right, rank+1,height+1);
     }
 }

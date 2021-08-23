@@ -103,6 +103,36 @@ public class lc138 {
 
     }
 
+    public Node copyRandomList3(Node head) {
+        if (head==null){
+            return null;
+        }
+        Node cur1=head,start2=new Node(head.val),cur2=start2;
+        HashMap<Node,Node>map=new HashMap<>();
+        map.put(cur1, cur2);
+        cur1=cur1.next;
+        while (cur1!=null){
+            cur2.next=new Node(cur1.val);
+            cur2=cur2.next;
+            map.put(cur1, cur2);
+            cur1=cur1.next;
+        }
+        cur1=head;
+        cur2=start2;
+        while (cur1!=null){
+            if (cur1.random==null){
+                cur2.random=null;
+            }
+            else{
+                cur2.random=map.get(cur1.random);
+            }
+
+            cur1=cur1.next;
+            cur2=cur2.next;
+        }
+        return start2;
+    }
+
     private class Node {
         int val;
         Node next;
