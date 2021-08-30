@@ -1,6 +1,5 @@
 package Array;
 
-import com.sun.glass.ui.Size;
 
 import java.util.HashMap;
 import java.util.HashSet;
