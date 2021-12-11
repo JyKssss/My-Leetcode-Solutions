@@ -17,7 +17,6 @@ public class lc2002 {
         if (index == s.length()){
             return;
         }
-
         productHelper(s, s1.append(s.charAt(index)), s2, index + 1);
         s1.deleteCharAt(s1.length() - 1);
         productHelper(s, s1, s2.append(s.charAt(index)), index + 1);

@@ -1,5 +1,6 @@
 package String;
 
+import java.util.LinkedList;
 import java.util.Stack;
 
 public class lc394 {
@@ -41,5 +42,42 @@ public class lc394 {
             stringBufferRes.insert(0, stack.pop());
         }
         return stringBufferRes.toString();
+    }
+
+    int index =0;
+
+    public String decodeString2(String s) {
+        return recurse(s);
+    }
+
+    private String recurse(String s) {
+        StringBuilder tempStringBuilder = new StringBuilder();
+        while (index < s.length()) {
+            char cur = s.charAt(index);
+            index += 1;
+            if (cur >='0' && cur <= '9') {
+                int multi = cur - '0';
+                while (s.charAt(index) >= '0' && s.charAt(index) <= '9') {
+                    multi = multi * 10 + (s.charAt(index) - '0');
+                    index += 1;
+                }
+                String nestString = recurse(s);
+                for (int i = 0; i < multi; i++) {
+                    tempStringBuilder.append(nestString);
+                }
+            } else if (cur == '[') {
+            } else if (cur == ']') {
+                break;
+            } else {
+                tempStringBuilder.append(cur);
+            }
+        }
+        return tempStringBuilder.toString();
+    }
+
+    public static void main(String[] args) {
+        lc394 obj = new lc394();
+        System.out.println(obj.decodeString2(
+                "3[a]2[bc]"));
     }
 }
