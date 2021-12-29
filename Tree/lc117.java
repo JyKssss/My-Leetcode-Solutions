@@ -59,6 +59,48 @@ public class lc117 {
         return root;
     }
 
+    public Node connect2(Node root) {
+        Node start = root;
+        Node nextStart = null;
+        Node nextCur = null;
+        while (start != null) {
+            Node cur = start;
+            while (cur != null && cur.left == null && cur.right == null) {
+                cur = cur.next;
+            }
+
+            if (cur != null) {
+                if (cur.left != null) {
+                    nextStart = cur.left;
+                    nextCur = nextStart;
+                    if (cur.right != null) {
+                        nextCur.next = cur.right;
+                        nextCur = nextCur.next;
+                    }
+                } else {
+                    nextStart = cur.right;
+                    nextCur = nextStart;
+                }
+                cur = cur.next;
+                while (cur != null) {
+                    if (cur.left != null) {
+                        nextCur.next = cur.left;
+                        nextCur = nextCur.next;
+                    }
+                    if (cur.right != null) {
+                        nextCur.next = cur.right;
+                        nextCur = nextCur.next;
+                    }
+                    cur = cur.next;
+                }
+                start = nextStart;
+            } else {
+                start = null;
+            }
+        }
+        return root;
+    }
+
     private class Node {
         public int val;
         public Node left;
